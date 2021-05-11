@@ -1,0 +1,6 @@
+-r base.txt
+pip-tools
+ipython
+coverage
+model_bakery
+flake8
