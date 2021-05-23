@@ -1,0 +1,40 @@
+{% extends "admin/base_site.html" %}
+{% block branding %}
+<h1 id="page-name">Relatórios</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+  <label for="generos">Filtro:</label>
+  <select name="generos" id="gen">
+    <option>---</option>
+    <option value="F">Feminino</option>
+    <option value="M">Masculino</option>
+    <option value="O">Outro</option>
+  </select>
+  <button type="button" onclick="gen()">Pesquisar</button> <br>
+</div>
+
+<div>
+  <b>Média de idade:</b> {{media_idade}} <br>
+  <b>Produto/Serviço mais consumido:</b> {{prod_serv}}
+</div>
+<script>
+  const inputValue = document.getElementById('gen')
+  function myFunction() {
+    if (window.location.search) {
+      const test = window.location.search.replace('?genero=', '')
+      inputValue.value = test
+    }
+  }
+  myFunction()
+  function gen() {
+    var value = inputValue.options[inputValue.selectedIndex].value
+    if (value && value !== '---') {
+      window.location.href = '?genero=' + value
+    } else if (value === '---') {
+      window.location.href = '/'
+    }
+  }
+</script>
+{% endblock %}
