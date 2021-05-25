@@ -10,7 +10,6 @@ router.register(r'relatorio-media-idade', viewsets.RelatorioClientesMediaIdadeVi
 router.register(r'relatorio-servico', viewsets.RelatorioServicoViewSet)
 
 urlpatterns = [
-    # path('', include(router.urls)),
-    path('', views.test.as_view()),
+    path('', views.RelatorioView.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

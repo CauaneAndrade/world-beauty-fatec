@@ -1,6 +1,7 @@
 # World Beauty
-**Matéria:** Testes de Software <br>
-**Professor:** Gerson Penha Neto
+**Matéria:** Testes de Software - **Professor:** Gerson Penha Neto
+
+[![app demo](./pag-principal.png)](https://www.youtube.com/watch?v=L6XgT7TgmZw "App Demo")
 
 Sistema feito utilizando framework Django, banco de dados PostgreSQL e ambiente Docker/Dockerfile
 
@@ -23,6 +24,9 @@ O objetivo é desenvolver um sistema com os seguintes requisitos:
     - [x] Qual é o serviço mais procurado para um determinado gênero.
 - [x] Capacidade de persistência de dados. A agenda deverá ser salva em algum banco
 de dados relacional.
+
+Diagrama ERD <br>
+![Diagrama do banco](./diagrama-ERD.png)
 
 ---
 

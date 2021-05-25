@@ -1,12 +1,14 @@
 from datetime import datetime
-from decimal import Decimal
 
+from django.contrib.auth.decorators import login_required
 from django.db.models import Avg, ExpressionWrapper, F, fields
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView
 from world_beauty.beauty.models import Cliente, ServicoCliente, ServicoProduto
 
 
-class test(ListView):
+@method_decorator(login_required(login_url='/admin/'), name='dispatch')
+class RelatorioView(ListView):
     queryset = Cliente.objects
     template_name = 'relatorio.html'
 

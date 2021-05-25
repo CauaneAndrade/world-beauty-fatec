@@ -23,8 +23,8 @@
   const inputValue = document.getElementById('gen')
   function myFunction() {
     if (window.location.search) {
-      const test = window.location.search.replace('?genero=', '')
-      inputValue.value = test
+      const queryValue = window.location.search.replace('?genero=', '')
+      inputValue.value = queryValue
     }
   }
   myFunction()

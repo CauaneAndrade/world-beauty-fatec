@@ -1,11 +1,6 @@
 from django.db import models
 
 
-class Test(models.Model):
-    pass
-
-
-
 class Cliente(models.Model):
     class Genero(models.TextChoices):
         FEMININO = 'F', ('Feminino')
