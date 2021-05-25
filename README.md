@@ -1,64 +1,52 @@
 # World Beauty
+**Matéria:** Testes de Software <br>
+**Professor:** Gerson Penha Neto
 
-Django e PostgreSQL
+Sistema feito utilizando framework Django, banco de dados PostgreSQL e ambiente Docker/Dockerfile
 
-## Criando um projeto do zero
+O grupo World Beauty atua no ramo da estética e beleza, fornecendo serviços como manicure, pedicure, entre outros.
+O objetivo é desenvolver um sistema com os seguintes requisitos:
+- [x] Cadastro de clientes com as seguintes informações:
+    - Nome
+    - Telefone
+    - Data de nascimento
+    - Gênero.
+- [x] Edição de um cadastro.
+- [x] Remoção de um cadastro.
+- [x] Listagem de todos os clientes em ordem alfabética.
+- [x] Listagem de somente os clientes de um determinado gênero em ordem alfabética.
+- [x] Para cada cliente a lista dos serviços e/ou produtos que este consumiu.
+- [x] Relatórios básicos com as seguintes informações:
+    - [x] Qual é a idade média de todo o público de uma unidade.
+    - [x] Qual é a idade média do público para um determinado gênero.
+    - [x] Qual é o serviço mais procurado para todo o público.
+    - [x] Qual é o serviço mais procurado para um determinado gênero.
+- [x] Capacidade de persistência de dados. A agenda deverá ser salva em algum banco
+de dados relacional.
 
-1. *.env** com base no .env-sample.
-    Exemplo:
-    ```
-    APP_PORT=8080
-    DB_PORT=5678
-    SECRET_KEY=string_aleatoria_gerada_pelo_django
-    ```
-    gerar a SECRET_KEY
-    ```
-    from django.core.management.utils import get_random_secret_key
-    print(get_random_secret_key())
-    ```
+---
 
-2. Dê um build na imagem docker
+## Passos para rodar o sistema localmente
 
-    ```bash
-    docker-compose build
-    ```
-
-3. Suba o banco de dados
-
-    ```bash
-    docker-compose up -d db
-    ```
-
-4. Gere as migrações iniciais
-
-    ```bash
-    docker-compose run --rm web python manage.py makemigrations
-    ```
-
-5. Execute as migrações iniciais
-
-    ```bash
-    docker-compose run --rm web python manage.py migrate
-    ```
-
-6. Para rodara aplicação
+1. Para rodara aplicação
 
     ```bash
     docker-compose run --rm --service-ports web
     ```
 
-## Extras
+2. Suba o banco de dados
+
+    ```bash
+    docker-compose up -d db
+    ```
+
+3. Acessando o app
+http://localhost:8080/
 
 * Rodar os testes
 
     ```bash
     docker-compose run --rm web python manage.py test --settings world_beauty.settings.test
-    ```
-
-* Rodar o linter
-
-    ```bash
-    docker-compose run --rm web flake8 .
     ```
 
 * Rodar o coverage
@@ -72,18 +60,3 @@ Django e PostgreSQL
     ```bash
     docker-compose run --rm web coverage report
     ```
-
-* Gerar o HTML do coverage
-
-    ```bash
-    docker-compose run --rm web coverage html
-    ```
-
-pip-tools
-```bash
-pip-compile requeriments.in --gererate-hashes
-```
-
-```bash
-pip-sync requirements.txt
-```
