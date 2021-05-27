@@ -25,7 +25,16 @@ O objetivo é desenvolver um sistema com os seguintes requisitos:
 - [x] Capacidade de persistência de dados. A agenda deverá ser salva em algum banco
 de dados relacional.
 
-Diagrama ERD <br>
+## Testes unitários <br>
+https://github.com/CauaneAndrade/world-beauty-fatec/blob/main/world_beauty/world_beauty/beauty/tests.py
+
+Resultado <br>
+![Resultado do teste](./teste-resultado.png)
+
+Cobertura de testes <br>
+![Resultado do cobertura teste](./teste-cobertura.png)
+
+## Diagrama ERD <br>
 ![Diagrama do banco](./diagrama-ERD.png)
 
 ---
@@ -56,7 +65,7 @@ http://localhost:8080/
 * Rodar o coverage
 
     ```bash
-    docker-compose run --rm web coverage run manage.py test --settings nome_do_novo_projeto.settings.test
+    docker-compose run --rm web coverage run manage.py test --settings world_beauty.settings.test
     ```
 
 * Cobertura do coverage no terminal
